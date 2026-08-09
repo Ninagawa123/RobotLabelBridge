@@ -1,0 +1,8 @@
+numpy
+Qt.py
+PySide6
+vtk
+NodeGraphQt
+trimesh
+pycollada
+valkey
