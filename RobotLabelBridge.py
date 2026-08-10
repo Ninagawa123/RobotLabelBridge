@@ -1,4 +1,10 @@
-"""Robot joint/link name conversion and rename utilities for LegacyMotionEditor.
+"""
+File Name: RobotLabelBridge.py
+Description: Robot joint/link name conversion and rename utilities for LegacyMotionEditor.
+
+Author      : Izumi Ninagawa
+License     : MIT License
+Copyright (c) 2026 Izumi Ninagawa
 
 Canonical naming data is loaded from ``RobotLabelBridge_Master.json``
 (located next to this module). Legacy ``robot_label_bridge_master.json``
@@ -5703,9 +5709,9 @@ if _HAS_QT:
                 self._list.addItem(f"{label}  [{mech}]")
             if self._list.count() == 0:
                 self._detail.setPlainText(
-                    "No loop_targets in Master.\n"
-                    "Closed loops are modeled as KinematicLoop + ClosureConstraint, "
-                    "not as cycles in link_tree."
+                "No loop_targets in Master.\n"
+                "Closed loops are modeled as KinematicLoop + ClosureConstraint, "
+                "not as cycles in link_tree."
                 )
 
         def _on_select(self, text: str) -> None:
@@ -5715,28 +5721,28 @@ if _HAS_QT:
                 self._detail.clear()
                 return
             lines = [
-                f"<b>{html.escape(label)}</b>",
-                f"mechanism: {html.escape(str(row.get('mechanism_type')))}",
-                f"side: {html.escape(str(row.get('side')))}",
-                f"landmark: {html.escape(str(row.get('landmark')))}",
-                f"morphology: {html.escape(str(row.get('morphology')))}",
-                f"status: {html.escape(str(row.get('status')))}",
-                f"confidence: {html.escape(str(row.get('mapping_confidence')))}",
-                "<br><b>Branches</b>",
+            f"<b>{html.escape(label)}</b>",
+            f"mechanism: {html.escape(str(row.get('mechanism_type')))}",
+            f"side: {html.escape(str(row.get('side')))}",
+            f"landmark: {html.escape(str(row.get('landmark')))}",
+            f"morphology: {html.escape(str(row.get('morphology')))}",
+            f"status: {html.escape(str(row.get('status')))}",
+            f"confidence: {html.escape(str(row.get('mapping_confidence')))}",
+            "<br><b>Branches</b>",
             ]
             for br in row.get("branches") or []:
                 lines.append(
-                    f"- {html.escape(str(br.get('id')))}: "
-                    f"links={html.escape(str(br.get('links')))} "
-                    f"joints={html.escape(str(br.get('joints')))}"
+                f"- {html.escape(str(br.get('id')))}: "
+                f"links={html.escape(str(br.get('links')))} "
+                f"joints={html.escape(str(br.get('joints')))}"
                 )
             lines.append("<br><b>Closures</b>")
             for cl in row.get("closures") or []:
                 lines.append(
-                    f"- {html.escape(str(cl.get('id')))}: "
-                    f"{html.escape(str(cl.get('from_link')))} -> "
-                    f"{html.escape(str(cl.get('to_link')))} "
-                    f"via {html.escape(str(cl.get('via_joint')))}"
+                f"- {html.escape(str(cl.get('id')))}: "
+                f"{html.escape(str(cl.get('from_link')))} -> "
+                f"{html.escape(str(cl.get('to_link')))} "
+                f"via {html.escape(str(cl.get('via_joint')))}"
                 )
             if row.get("notes"):
                 lines.append(f"<br>notes: {html.escape(str(row.get('notes')))}")
@@ -5858,9 +5864,9 @@ if _HAS_QT:
         sys.exit(app.exec())
 
 
-    # ===========================================================================
-    # Standalone lookup UI  (python RobotLabelBridge.py)
-    # ===========================================================================
+# ===========================================================================
+# Standalone lookup UI  (python RobotLabelBridge.py)
+# ===========================================================================
 
 
 else:
