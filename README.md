@@ -2,6 +2,8 @@
 
 [English](README.md) | [日本語](README_jp.md)
 
+<img src="./doc/RobotLabelBridge.png" width=600 />
+
 A Python module that maps robot joint / link names onto the short official labels used inside the project—often called **canonical** short names.  
 `LeftHip`, `hip_pitch_joint`, and `l_hip` may all mean the same axis while looking different. Like deciding one legal name even when someone has many nicknames, RobotLabelBridge settles on one shared label for everyday use.
 
