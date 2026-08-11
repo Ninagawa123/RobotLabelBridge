@@ -2,6 +2,8 @@
 
 [English](README.md) | [日本語](README_jp.md)
 
+<img src="./doc/RobotLabelBridge.png" width=600 />
+
 ロボットの joint / link 名を、プロジェクト内で共通に使う短い正式名——いわゆる **カノニカル短名**——にそろえるための Python モジュールです。  
 `LeftHip` や `hip_pitch_joint`、`l_hip` のように表記は違っても同じ軸を指すことがよくあります。ニックネームがいくつあっても名簿では本名を決めておくと安心なのと同じで、こちらもプロジェクト内の共通語を一つに寄せます。
 
